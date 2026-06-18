@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neha Vadagi — Cloud Ops Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -54,38 +55,70 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 3rem;
-      background: rgba(10,11,14,0.8);
+      padding: 1.5rem 3rem;
+      background: rgba(10,11,14,0.85);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
 
-    .nav-logo {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-name {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-hi);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .nav-name:hover {
       color: var(--accent);
-      letter-spacing: 0.08em;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 1.8rem;
       list-style: none;
     }
 
     .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
       color: var(--text-dim);
       text-decoration: none;
-      letter-spacing: 0.06em;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-hi);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .nav-right a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 1.1rem;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--accent); }
+    .nav-right a:hover {
+      color: var(--accent);
+    }
 
     /* ── HERO ── */
-    #hero {
+    #home {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -283,56 +316,6 @@
 
     .about-text p { color: var(--text-dim); margin-bottom: 1rem; }
 
-    /* ── SKILLS ── */
-    .skill-categories {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .skill-cat {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 2rem;
-      transition: border-color 0.25s;
-    }
-
-    .skill-cat:hover { border-color: var(--accent2); }
-
-    .skill-cat-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .skill-cat-title {
-      font-weight: 600;
-      color: var(--text-hi);
-      margin-bottom: 1.2rem;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tag {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 3px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      letter-spacing: 0.04em;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .tag:hover { border-color: var(--accent); color: var(--accent); }
-
     /* ── PROJECTS ── */
     #projects { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -465,34 +448,28 @@
       border-bottom: none;
     }
 
-    /* ── CONTACT ── */
-    #contact {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 6rem 3rem;
+    /* ── ART ── */
+    #art { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 60vh; display: flex; align-items: center; }
+
+    .art-placeholder {
       text-align: center;
+      padding: 4rem 2rem;
     }
 
-    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .art-placeholder .icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
 
-    .contact-headline {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      color: var(--text-hi);
-      line-height: 1.1;
+    .art-placeholder h2 {
       margin-bottom: 1rem;
     }
 
-    .contact-sub {
+    .art-placeholder p {
       color: var(--text-dim);
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     /* ── FOOTER ── */
@@ -521,20 +498,32 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
+      nav { 
+        padding: 1rem 1.5rem; 
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .nav-left {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .nav-links { 
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+      .nav-right {
+        gap: 0.8rem;
+      }
       section { padding: 4rem 1.5rem; }
-      #hero { padding: 7rem 1.5rem 3rem; }
-      #contact { padding: 4rem 1.5rem; }
+      #home { padding: 7rem 1.5rem 3rem; }
       
       .about-grid { 
         grid-template-columns: 1fr; 
         gap: 2.5rem; 
         text-align: center;
-      }
-      
-      .skill-categories { 
-        grid-template-columns: 1fr; 
       }
       
       .projects-grid { 
@@ -566,6 +555,10 @@
         height: 200px !important;
       }
       
+      #art {
+        min-height: 40vh;
+      }
+      
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
 
@@ -579,25 +572,33 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">nv@cloudops ~ $</div>
-    <ul class="nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#education">education</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
+    <div class="nav-left">
+      <a href="#home" class="nav-name" onclick="window.location.reload();">Neha Vadagi</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#art">Art</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <a href="mailto:nehaavadagii@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/nehavadagi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/neha-vadagi-9616731b3/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://medium.com/@nehavadagi11" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+    </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero">
+  <!-- HOME / HERO -->
+  <section id="home">
     <div class="hero-grid-bg"></div>
     <div class="hero-orb"></div>
     <div class="hero-orb2"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">Cloud Operations Engineer</div>
-      <h1>Hi, I'm Neha<span>Vadagi.</span></h1>
+      <h1>Hi, I'm Neha <span>Vadagi.</span></h1>
       <p class="hero-sub">
         Cloud infrastructure enthusiast and curious artist in Bengaluru. 
         I build automation pipelines and craft digital art in my spare time — slowly figuring out how to turn servers into canvases. 
@@ -605,7 +606,7 @@
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary">View Projects →</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
+        <a href="#contact" class="btn-ghost">Say hi!</a>
       </div>
       <div class="terminal-ticker">
         <span class="ticker-prompt">$</span>
@@ -619,7 +620,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-text fade-up">
-        <div class="section-label">// about me</div>
+        <div class="section-label">/ about me</div>
         <p>
           I've spent upto 3 years in Cloud Operations, managing critical incidents and building resilient infrastructure on AWS. 
           I thrive at the intersection of DevOps and platform engineering — automating infrastructure, ensuring reliability, and obsessing over observability. 
@@ -640,169 +641,10 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="skills-section" style="padding: 6rem 3rem;">
-    <div class="section-container">
-      <div class="section-label fade-up">// skills</div>
-      <h2 class="fade-up">Tech Stack</h2>
-      <div class="skill-categories">
-        <div class="skill-cat fade-up">
-          <div class="skill-cat-icon">☁️</div>
-          <div class="skill-cat-title">Cloud Platforms</div>
-          <div class="skill-tags">
-            <span class="tag">AWS</span>
-            <span class="tag">GCP</span>
-            <span class="tag">Azure</span>
-            <span class="tag">EC2</span>
-            <span class="tag">S3</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-up">
-          <div class="skill-cat-icon">⚙️</div>
-          <div class="skill-cat-title">Infrastructure & Automation</div>
-          <div class="skill-tags">
-            <span class="tag">Terraform</span>
-            <span class="tag">Ansible</span>
-            <span class="tag">CloudFormation</span>
-            <span class="tag">Pulumi</span>
-            <span class="tag">Bash</span>
-            <span class="tag">Python</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-up">
-          <div class="skill-cat-icon">🐳</div>
-          <div class="skill-cat-title">Containers & Orchestration</div>
-          <div class="skill-tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">ECS</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-up">
-          <div class="skill-cat-icon">🔁</div>
-          <div class="skill-cat-title">CI/CD & DevOps</div>
-          <div class="skill-tags">
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">GitLab CI</span>
-            <span class="tag">CodePipeline</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-up">
-          <div class="skill-cat-icon">📡</div>
-          <div class="skill-cat-title">Monitoring & Observability</div>
-          <div class="skill-tags">
-            <span class="tag">Prometheus</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">CloudWatch</span>
-          </div>
-        </div>
-        <div class="skill-cat fade-up">
-          <div class="skill-cat-icon">🔐</div>
-          <div class="skill-cat-title">Security & Networking</div>
-          <div class="skill-tags">
-            <span class="tag">IAM</span>
-            <span class="tag">VPC</span>
-            <span class="tag">Security Groups</span>
-            <span class="tag">Vault</span>
-            <span class="tag">WAF</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-container">
-      <div class="section-label fade-up">// projects</div>
-      <h2 class="fade-up">Featured Work</h2>
-      <div class="projects-grid">
-        <div class="project-card fade-up">
-          <div class="project-type">AI · DevOps · Automation</div>
-          <div class="project-title">AI-Powered CI/CD AutoFix Platform</div>
-          <div class="project-desc">
-            Built an AI-driven GitHub Action that automatically detects and fixes compilation 
-            errors in Java projects. Uses LLMs to analyze build logs, identify root causes, 
-            generate fixes, and propose them via Pull Requests — reducing manual debugging 
-            effort and enabling self-healing CI/CD pipelines.
-          </div>
-          <div class="project-footer">
-            <div class="project-stack">
-              <span class="tag">Python</span>
-              <span class="tag">GitHub Actions</span>
-              <span class="tag">LLMs</span>
-              <span class="tag">CI/CD</span>
-              <span class="tag">Java</span>
-            </div>
-            <a href="https://github.com/nehavadagi/ai-cicd-autofix" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card fade-up">
-          <div class="project-type">Infrastructure · IaC · Automation</div>
-          <div class="project-title">AWS Infrastructure with Terraform</div>
-          <div class="project-desc">
-            Built a production-ready AWS infrastructure using Terraform, featuring a modular 
-            multi-tier architecture with VPC, public/private subnets, EC2 instances, load 
-            balancers, and RDS databases. Implemented remote state management with S3 and 
-            DynamoDB for team collaboration, and designed reusable modules for scalable 
-            infrastructure deployment.
-          </div>
-          <div class="project-footer">
-            <div class="project-stack">
-              <span class="tag">Terraform</span>
-              <span class="tag">AWS</span>
-              <span class="tag">VPC</span>
-              <span class="tag">EC2</span>
-              <span class="tag">RDS</span>
-              <span class="tag">S3</span>
-            </div>
-            <a href="https://github.com/nehavadagi/terraform-aws-infrastructure" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card fade-up">
-          <div class="project-type">CI/CD · DevOps</div>
-          <div class="project-title">Zero-Downtime Deploy Pipeline</div>
-          <div class="project-desc">
-            Architected a blue-green deployment system using ECS and CodePipeline with automated
-            rollback triggers tied to CloudWatch alarms, achieving zero incidents post-launch.
-          </div>
-          <div class="project-footer">
-            <div class="project-stack">
-              <span class="tag">ECS</span>
-              <span class="tag">CodePipeline</span>
-              <span class="tag">CloudWatch</span>
-            </div>
-            <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card fade-up">
-          <div class="project-type">Cost Engineering · Automation</div>
-          <div class="project-title">Cloud Cost Optimization Bot</div>
-          <div class="project-desc">
-            Built a Python-based bot that identifies idle resources, rightsizes instances,
-            and generates weekly cost reports — cutting cloud spend by 28% in 3 months.
-          </div>
-          <div class="project-footer">
-            <div class="project-stack">
-              <span class="tag">Python</span>
-              <span class="tag">AWS Cost Explorer</span>
-              <span class="tag">Slack API</span>
-            </div>
-            <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-container">
-      <div class="section-label fade-up">// experience</div>
+      <div class="section-label fade-up">/ experience</div>
       <h2 class="fade-up">Career Timeline</h2>
 
       <!-- Capgemini -->
@@ -890,17 +732,103 @@
     </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-container">
+      <div class="section-label fade-up">/ projects</div>
+      <h2 class="fade-up">Featured Work</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-up">
+          <div class="project-type">AI · DevOps · Automation</div>
+          <div class="project-title">AI-Powered CI/CD AutoFix Platform</div>
+          <div class="project-desc">
+            Built an AI-driven GitHub Action that automatically detects and fixes compilation 
+            errors in Java projects. Uses LLMs to analyze build logs, identify root causes, 
+            generate fixes, and propose them via Pull Requests — reducing manual debugging 
+            effort and enabling self-healing CI/CD pipelines.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">Python</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Java</span>
+            </div>
+            <a href="https://github.com/nehavadagi/ai-cicd-autofix" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-type">Infrastructure · IaC · Automation</div>
+          <div class="project-title">AWS Infrastructure with Terraform</div>
+          <div class="project-desc">
+            Built a production-ready AWS infrastructure using Terraform, featuring a modular 
+            multi-tier architecture with VPC, public/private subnets, EC2 instances, load 
+            balancers, and RDS databases. Implemented remote state management with S3 and 
+            DynamoDB for team collaboration, and designed reusable modules for scalable 
+            infrastructure deployment.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">Terraform</span>
+              <span class="tag">AWS</span>
+              <span class="tag">VPC</span>
+              <span class="tag">EC2</span>
+              <span class="tag">RDS</span>
+              <span class="tag">S3</span>
+            </div>
+            <a href="https://github.com/nehavadagi/terraform-aws-infrastructure" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-type">CI/CD · DevOps</div>
+          <div class="project-title">Zero-Downtime Deploy Pipeline</div>
+          <div class="project-desc">
+            Architected a blue-green deployment system using ECS and CodePipeline with automated
+            rollback triggers tied to CloudWatch alarms, achieving zero incidents post-launch.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">ECS</span>
+              <span class="tag">CodePipeline</span>
+              <span class="tag">CloudWatch</span>
+            </div>
+            <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-type">Cost Engineering · Automation</div>
+          <div class="project-title">Cloud Cost Optimization Bot</div>
+          <div class="project-desc">
+            Built a Python-based bot that identifies idle resources, rightsizes instances,
+            and generates weekly cost reports — cutting cloud spend by 28% in 3 months.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">Python</span>
+              <span class="tag">AWS Cost Explorer</span>
+              <span class="tag">Slack API</span>
+            </div>
+            <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-container">
-      <div class="section-label fade-up">// education</div>
+      <div class="section-label fade-up">/ education</div>
       <h2 class="fade-up">Academic Background</h2>
 
-      <!-- Education 1 -->
       <div class="edu-card">
         <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
           <div style="font-weight: 600; color: var(--accent); font-size: 1.1rem;">
-            University of Lincoln
+            University of Lincoln, United Kingdom
           </div>
         </div>
         <div style="flex: 1;">
@@ -918,7 +846,6 @@
         </div>
       </div>
 
-      <!-- Education 2 -->
       <div class="edu-card">
         <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
           <div style="font-weight: 600; color: var(--accent); font-size: 1.1rem;">
@@ -943,26 +870,28 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-inner fade-up">
-      <div class="section-label" style="text-align:center;">// contact</div>
-      <div class="contact-headline">Let's build something reliable.</div>
-      <p class="contact-sub">
-        Open to new opportunities, collaborations, or just a conversation about cloud infrastructure.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:nehaavadagii@gmail.com" class="btn-primary">Say Hello →</a>
-        <a href="https://github.com/nehavadagi" target="_blank" class="btn-ghost">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/neha-vadagi-9616731b3/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+  <!-- ART -->
+  <section id="art">
+    <div class="section-container" style="width: 100%;">
+      <div class="section-label fade-up" style="text-align: center;">/ art</div>
+      <div class="art-placeholder fade-up">
+        <span class="icon">🎨</span>
+        <h2>Coming Soon</h2>
+        <p>
+          I'm exploring the intersection of cloud infrastructure and digital art. 
+          Stay tuned for projects that turn servers into canvases.
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-dim);">
+          ✨ Generative art · Creative coding · Interactive installations
+        </p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <span>© 2025 Neha Vadagi</span>
-    <span>Built with intention, deployed with precision.</span>
+  <footer style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 0.3rem; border-top: 1px solid var(--border); padding: 1.5rem 3rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim);">
+  <span>Built and designed by Neha Vadagi.</span>
+  <span>All rights reserved. © 2025</span>
   </footer>
 
   <script>
@@ -1024,6 +953,12 @@
         }
       }
     }
+
+    // ── REFRESH PAGE ON NAME CLICK ──
+    document.querySelector('.nav-name').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.reload();
+    });
   </script>
 
 </body>
