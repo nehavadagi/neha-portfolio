@@ -3,7 +3,7 @@
 🌐 **Live Site:** https://nehavadagi.github.io/neha-portfolio/
 
 ## About
-My personal portfolio website showcasing my Cloud Operations and DevOps work.
+My personal portfolio website showcasing my Cloud Operations work.
 
 ## Tech Stack
 - HTML5
