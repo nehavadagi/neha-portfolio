@@ -242,7 +242,9 @@
     @keyframes blink { 50% { opacity: 0; } }
 
     /* ── SECTIONS ── */
-    section { padding: 6rem 3rem; }
+    section { 
+      padding: 6rem 3rem; 
+    }
 
     .section-label {
       font-family: var(--font-mono);
@@ -261,6 +263,12 @@
       margin-bottom: 3rem;
     }
 
+    /* ── CONTAINER ── */
+    .section-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
     /* ── ABOUT ── */
     #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -269,52 +277,19 @@
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
     }
 
     .about-text p { color: var(--text-dim); margin-bottom: 1rem; }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .stat-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-
-    .stat-num {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--text-hi);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-
-    .stat-num span { color: var(--accent); }
-
-    .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      letter-spacing: 0.06em;
-    }
-
     /* ── SKILLS ── */
-    #skills { max-width: 1100px; margin: 0 auto; }
-
-    .skills-section { padding: 6rem 3rem; }
-
     .skill-categories {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .skill-cat {
@@ -359,13 +334,14 @@
     .tag:hover { border-color: var(--accent); color: var(--accent); }
 
     /* ── PROJECTS ── */
-    #projects { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 6rem 3rem; }
+    #projects { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       max-width: 1100px;
+      margin: 0 auto;
     }
 
     .project-card {
@@ -440,22 +416,22 @@
 
     .project-link:hover { color: var(--accent); }
 
-    /* ── EXPERIENCE (UPDATED) ── */
-    #experience {
-      padding: 6rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
     .exp-card {
       display: flex;
       gap: 2rem;
-      padding: 1.2rem 0.5rem;
+      padding: 1.5rem 0.5rem;
       border-bottom: 1px solid var(--border);
       cursor: pointer;
       align-items: flex-start;
       transition: background 0.2s ease;
       border-radius: 4px;
+    }
+
+    .exp-card:last-child {
+      border-bottom: none;
     }
 
     .exp-card:hover {
@@ -477,61 +453,16 @@
     /* ── EDUCATION ── */
     #education { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-      max-width: 740px;
+    .edu-card {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
     }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px; bottom: 8px;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 3rem;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -2.42rem;
-      top: 6px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    .timeline-date {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.4rem;
-    }
-
-    .timeline-role {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-hi);
-    }
-
-    .timeline-company {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      margin-bottom: 0.6rem;
-    }
-
-    .timeline-desc {
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      line-height: 1.8;
+    .edu-card:last-child {
+      border-bottom: none;
     }
 
     /* ── CONTACT ── */
@@ -594,20 +525,48 @@
       .nav-links { gap: 1.2rem; }
       section { padding: 4rem 1.5rem; }
       #hero { padding: 7rem 1.5rem 3rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .skill-categories { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-
-      #experience { padding: 4rem 1.5rem; }
+      #contact { padding: 4rem 1.5rem; }
+      
+      .about-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2.5rem; 
+        text-align: center;
+      }
+      
+      .skill-categories { 
+        grid-template-columns: 1fr; 
+      }
+      
+      .projects-grid { 
+        grid-template-columns: 1fr; 
+      }
+      
       .exp-card {
         flex-direction: column !important;
         gap: 0.3rem !important;
         padding: 1rem 0.5rem !important;
       }
+      
       .exp-card > div:first-child {
         min-width: unset !important;
       }
+      
+      .edu-card {
+        flex-direction: column !important;
+        gap: 0.3rem !important;
+        padding: 1rem 0.5rem !important;
+      }
+      
+      .edu-card > div:first-child {
+        min-width: unset !important;
+      }
+      
+      .about-grid img {
+        width: 200px !important;
+        height: 200px !important;
+      }
+      
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -672,34 +631,21 @@
           I also make art — because creativity shouldn't stop at the command line.
         </p>
       </div>
-      <div class="stat-grid fade-up">
-        <div class="stat-card">
-          <div class="stat-num">2<span>+</span></div>
-          <div class="stat-label">Years in Cloud</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">50<span>+</span></div>
-          <div class="stat-label">P1/P2 Incidents Managed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">1.5<span>hrs</span></div>
-          <div class="stat-label">Avg Resolution Time</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">AWS<span> ☁</span></div>
-          <div class="stat-label">Primary Platform</div>
+      <div class="fade-up" style="display: flex; justify-content: center; align-items: center;">
+        <div style="position: relative;">
+          <img src="images/profile.jpg" alt="Neha Vadagi" style="width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); box-shadow: 0 0 60px rgba(79, 209, 197, 0.15);" />
+          <div style="position: absolute; inset: -8px; border-radius: 50%; border: 1px solid rgba(79, 209, 197, 0.2);"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section class="skills-section">
-    <div style="max-width:1100px; margin:0 auto;">
+  <section class="skills-section" style="padding: 6rem 3rem;">
+    <div class="section-container">
       <div class="section-label fade-up">// skills</div>
       <h2 class="fade-up">Tech Stack</h2>
       <div class="skill-categories">
-
         <div class="skill-cat fade-up">
           <div class="skill-cat-icon">☁️</div>
           <div class="skill-cat-title">Cloud Platforms</div>
@@ -711,7 +657,6 @@
             <span class="tag">S3</span>
           </div>
         </div>
-
         <div class="skill-cat fade-up">
           <div class="skill-cat-icon">⚙️</div>
           <div class="skill-cat-title">Infrastructure & Automation</div>
@@ -724,7 +669,6 @@
             <span class="tag">Python</span>
           </div>
         </div>
-
         <div class="skill-cat fade-up">
           <div class="skill-cat-icon">🐳</div>
           <div class="skill-cat-title">Containers & Orchestration</div>
@@ -734,7 +678,6 @@
             <span class="tag">ECS</span>
           </div>
         </div>
-
         <div class="skill-cat fade-up">
           <div class="skill-cat-icon">🔁</div>
           <div class="skill-cat-title">CI/CD & DevOps</div>
@@ -745,7 +688,6 @@
             <span class="tag">CodePipeline</span>
           </div>
         </div>
-
         <div class="skill-cat fade-up">
           <div class="skill-cat-icon">📡</div>
           <div class="skill-cat-title">Monitoring & Observability</div>
@@ -755,7 +697,6 @@
             <span class="tag">CloudWatch</span>
           </div>
         </div>
-
         <div class="skill-cat fade-up">
           <div class="skill-cat-icon">🔐</div>
           <div class="skill-cat-title">Security & Networking</div>
@@ -767,108 +708,107 @@
             <span class="tag">WAF</span>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-label fade-up">// projects</div>
-    <h2 class="fade-up">Featured Work</h2>
-    <div class="projects-grid">
-
-      <div class="project-card fade-up">
-        <div class="project-type">AI · DevOps · Automation</div>
-        <div class="project-title">AI-Powered CI/CD AutoFix Platform</div>
-        <div class="project-desc">
-          Built an AI-driven GitHub Action that automatically detects and fixes compilation 
-          errors in Java projects. Uses LLMs to analyze build logs, identify root causes, 
-          generate fixes, and propose them via Pull Requests — reducing manual debugging 
-          effort and enabling self-healing CI/CD pipelines.
-        </div>
-        <div class="project-footer">
-          <div class="project-stack">
-            <span class="tag">Python</span>
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Java</span>
+    <div class="section-container">
+      <div class="section-label fade-up">// projects</div>
+      <h2 class="fade-up">Featured Work</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-up">
+          <div class="project-type">AI · DevOps · Automation</div>
+          <div class="project-title">AI-Powered CI/CD AutoFix Platform</div>
+          <div class="project-desc">
+            Built an AI-driven GitHub Action that automatically detects and fixes compilation 
+            errors in Java projects. Uses LLMs to analyze build logs, identify root causes, 
+            generate fixes, and propose them via Pull Requests — reducing manual debugging 
+            effort and enabling self-healing CI/CD pipelines.
           </div>
-          <a href="https://github.com/nehavadagi/ai-cicd-autofix" target="_blank" class="project-link">GitHub ↗</a>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">Python</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Java</span>
+            </div>
+            <a href="https://github.com/nehavadagi/ai-cicd-autofix" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-type">Infrastructure · IaC · Automation</div>
+          <div class="project-title">AWS Infrastructure with Terraform</div>
+          <div class="project-desc">
+            Built a production-ready AWS infrastructure using Terraform, featuring a modular 
+            multi-tier architecture with VPC, public/private subnets, EC2 instances, load 
+            balancers, and RDS databases. Implemented remote state management with S3 and 
+            DynamoDB for team collaboration, and designed reusable modules for scalable 
+            infrastructure deployment.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">Terraform</span>
+              <span class="tag">AWS</span>
+              <span class="tag">VPC</span>
+              <span class="tag">EC2</span>
+              <span class="tag">RDS</span>
+              <span class="tag">S3</span>
+            </div>
+            <a href="https://github.com/nehavadagi/terraform-aws-infrastructure" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-type">CI/CD · DevOps</div>
+          <div class="project-title">Zero-Downtime Deploy Pipeline</div>
+          <div class="project-desc">
+            Architected a blue-green deployment system using ECS and CodePipeline with automated
+            rollback triggers tied to CloudWatch alarms, achieving zero incidents post-launch.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">ECS</span>
+              <span class="tag">CodePipeline</span>
+              <span class="tag">CloudWatch</span>
+            </div>
+            <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card fade-up">
+          <div class="project-type">Cost Engineering · Automation</div>
+          <div class="project-title">Cloud Cost Optimization Bot</div>
+          <div class="project-desc">
+            Built a Python-based bot that identifies idle resources, rightsizes instances,
+            and generates weekly cost reports — cutting cloud spend by 28% in 3 months.
+          </div>
+          <div class="project-footer">
+            <div class="project-stack">
+              <span class="tag">Python</span>
+              <span class="tag">AWS Cost Explorer</span>
+              <span class="tag">Slack API</span>
+            </div>
+            <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
+          </div>
         </div>
       </div>
-
-      <div class="project-card fade-up">
-        <div class="project-type">Infrastructure · IaC · Automation</div>
-        <div class="project-title">AWS Infrastructure with Terraform</div>
-        <div class="project-desc">
-          Built a production-ready AWS infrastructure using Terraform, featuring a modular 
-          multi-tier architecture with VPC, public/private subnets, EC2 instances, load 
-          balancers, and RDS databases. Implemented remote state management with S3 and 
-          DynamoDB for team collaboration, and designed reusable modules for scalable 
-          infrastructure deployment.
-        </div>
-        <div class="project-footer">
-          <div class="project-stack">
-            <span class="tag">Terraform</span>
-            <span class="tag">AWS</span>
-            <span class="tag">VPC</span>
-            <span class="tag">EC2</span>
-            <span class="tag">RDS</span>
-            <span class="tag">S3</span>
-          </div>
-          <a href="https://github.com/nehavadagi/terraform-aws-infrastructure" target="_blank" class="project-link">GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="project-card fade-up">
-        <div class="project-type">CI/CD · DevOps</div>
-        <div class="project-title">Zero-Downtime Deploy Pipeline</div>
-        <div class="project-desc">
-          Architected a blue-green deployment system using ECS and CodePipeline with automated
-          rollback triggers tied to CloudWatch alarms, achieving zero incidents post-launch.
-        </div>
-        <div class="project-footer">
-          <div class="project-stack">
-            <span class="tag">ECS</span>
-            <span class="tag">CodePipeline</span>
-            <span class="tag">CloudWatch</span>
-          </div>
-          <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="project-card fade-up">
-        <div class="project-type">Cost Engineering · Automation</div>
-        <div class="project-title">Cloud Cost Optimization Bot</div>
-        <div class="project-desc">
-          Built a Python-based bot that identifies idle resources, rightsizes instances,
-          and generates weekly cost reports — cutting cloud spend by 28% in 3 months.
-        </div>
-        <div class="project-footer">
-          <div class="project-stack">
-            <span class="tag">Python</span>
-            <span class="tag">AWS Cost Explorer</span>
-            <span class="tag">Slack API</span>
-          </div>
-          <a href="https://github.com/nehavadagi" target="_blank" class="project-link">GitHub ↗</a>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- EXPERIENCE (UPDATED) -->
-  <section id="experience" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-    <div style="max-width:1100px; margin:0 auto;">
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-container">
       <div class="section-label fade-up">// experience</div>
       <h2 class="fade-up">Career Timeline</h2>
 
       <!-- Capgemini -->
       <div class="exp-card" onclick="toggleExp('capgemini')">
         <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
-          <div style="font-weight: 600; color: var(--accent); font-size: 1.2rem;">
+          <div style="font-weight: 600; color: var(--accent); font-size: 1.1rem;">
             Capgemini
           </div>
         </div>
@@ -908,10 +848,10 @@
         </div>
       </div>
 
-      <!-- Grep & Awk Technologies -->
+      <!-- Grep & Awk -->
       <div class="exp-card" onclick="toggleExp('grepawk')">
         <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
-          <div style="font-weight: 600; color: var(--accent); font-size: 1.2rem;">
+          <div style="font-weight: 600; color: var(--accent); font-size: 1.1rem;">
             Grep & Awk Technologies
           </div>
         </div>
@@ -951,34 +891,55 @@
   </section>
 
   <!-- EDUCATION -->
-  <section id="education" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-    <div style="max-width:1100px; margin:0 auto;">
+  <section id="education">
+    <div class="section-container">
       <div class="section-label fade-up">// education</div>
       <h2 class="fade-up">Academic Background</h2>
-      <div class="timeline fade-up">
 
-        <div class="timeline-item">
-          <div class="timeline-date">2025 — 2026</div>
-          <div class="timeline-role">PG Diploma in Cloud Computing</div>
-          <div class="timeline-company">— University of Lincoln, United Kingdom</div>
-          <div class="timeline-desc">
-            Relevant Modules: Cloud Architecture, Cloud Deployment, CI/CD, Security & Compliance, Data Engineering, 
-            DevOps & Automation. Gained hands-on experience with AWS, Azure, and GCP through 
-            practical coursework and projects.
+      <!-- Education 1 -->
+      <div class="edu-card">
+        <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
+          <div style="font-weight: 600; color: var(--accent); font-size: 1.1rem;">
+            University of Lincoln
           </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">2017 — 2021</div>
-          <div class="timeline-role">B.E. in Computer Science & Engineering</div>
-          <div class="timeline-company">— East West Institute of Technology, Bengaluru</div>
-          <div class="timeline-desc">
-            CGPA: 7.4 / 10.0. Built a strong foundation in programming, data structures, 
-            algorithms, and software engineering principles.
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
+              PG Diploma in Cloud Computing
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em; white-space: nowrap;">
+              2025 — 2026
+            </span>
+          </div>
+          <div style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">
+            Relevant Modules: Cloud Architecture, Cloud Deployment, CI/CD, Security & Compliance, Data Engineering, DevOps & Automation.
           </div>
         </div>
-
       </div>
+
+      <!-- Education 2 -->
+      <div class="edu-card">
+        <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
+          <div style="font-weight: 600; color: var(--accent); font-size: 1.1rem;">
+            EWIT, Bengaluru
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
+              B.E. Computer Science & Engineering
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em; white-space: nowrap;">
+              2017 — 2021
+            </span>
+          </div>
+          <div style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">
+            CGPA: 7.4 / 10.0 · Built a strong foundation in programming, data structures, algorithms, and software engineering principles.
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
