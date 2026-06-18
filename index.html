@@ -440,54 +440,99 @@
 
     .project-link:hover { color: var(--accent); }
 
-    /* ── EXPERIENCE ── */
-#experience { 
-  padding: 6rem 3rem; 
-  max-width: 1100px; 
-  margin: 0 auto; 
-}
+    /* ── EXPERIENCE (UPDATED) ── */
+    #experience {
+      padding: 6rem 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-.exp-card {
-  display: flex;
-  gap: 2rem;
-  padding: 1.2rem 0.5rem;
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  align-items: flex-start;
-  transition: background 0.2s ease;
-  border-radius: 4px;
-}
+    .exp-card {
+      display: flex;
+      gap: 2rem;
+      padding: 1.2rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      align-items: flex-start;
+      transition: background 0.2s ease;
+      border-radius: 4px;
+    }
 
-.exp-card:hover {
-  background: var(--bg3);
-}
+    .exp-card:hover {
+      background: var(--bg3);
+    }
 
-.exp-details {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-  opacity: 0;
-}
+    .exp-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
 
-.exp-details.open {
-  max-height: 1000px;
-  opacity: 1;
-}
+    .exp-details.open {
+      max-height: 1000px;
+      opacity: 1;
+    }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  #experience { padding: 4rem 1.5rem; }
-  
-  .exp-card {
-    flex-direction: column !important;
-    gap: 0.3rem !important;
-    padding: 1rem 0.5rem !important;
-  }
-  
-  .exp-card > div:first-child {
-    min-width: unset !important;
-  }
-}
+    /* ── EDUCATION ── */
+    #education { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      max-width: 740px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.42rem;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-role {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-hi);
+    }
+
+    .timeline-company {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
 
     /* ── CONTACT ── */
     #contact {
@@ -553,6 +598,16 @@
       .skill-categories { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      #experience { padding: 4rem 1.5rem; }
+      .exp-card {
+        flex-direction: column !important;
+        gap: 0.3rem !important;
+        padding: 1rem 0.5rem !important;
+      }
+      .exp-card > div:first-child {
+        min-width: unset !important;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -571,6 +626,7 @@
       <li><a href="#skills">skills</a></li>
       <li><a href="#projects">projects</a></li>
       <li><a href="#experience">experience</a></li>
+      <li><a href="#education">education</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
   </nav>
@@ -803,128 +859,128 @@
     </div>
   </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-  <div style="max-width:1100px; margin:0 auto;">
-    <div class="section-label fade-up">// experience</div>
-    <h2 class="fade-up">Career Timeline</h2>
+  <!-- EXPERIENCE (UPDATED) -->
+  <section id="experience" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-label fade-up">// experience</div>
+      <h2 class="fade-up">Career Timeline</h2>
 
-    <!-- Capgemini -->
-    <div class="exp-card" onclick="toggleExp('capgemini')">
-      <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
-        <div style="font-weight: 600; color: var(--accent); font-size: 1.2rem;">
-          Capgemini
-        </div>
-      </div>
-      <div style="flex: 1;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
-          <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
-            Major Incident Manager
+      <!-- Capgemini -->
+      <div class="exp-card" onclick="toggleExp('capgemini')">
+        <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
+          <div style="font-weight: 600; color: var(--accent); font-size: 1.2rem;">
+            Capgemini
           </div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em; white-space: nowrap;">
-            SEP 2022 — DEC 2024
-          </span>
         </div>
-        <div id="capgemini-details" class="exp-details">
-          <ul style="list-style: none; padding: 0; margin-top: 0.8rem;">
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Managed and coordinated resolution of <strong style="color: var(--text-hi);">50+ P1/P2 incidents</strong> impacting AWS-hosted enterprise applications
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Reduced MTTR from <strong style="color: var(--text-hi);">4 hours to 2.5 hours</strong> through structured bridge calls and simplified communication protocols
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Conducted Post-Incident Reviews (PIRs) and Root Cause Analysis (RCA), documenting findings to prevent recurrence
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Trained <strong style="color: var(--text-hi);">3 L1/L2 support engineers</strong> in ITIL-based incident management
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Maintained transparent stakeholder communication for high-severity incidents to minimize business impact
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Grep & Awk Technologies -->
-    <div class="exp-card" onclick="toggleExp('grepawk')">
-      <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
-        <div style="font-weight: 600; color: var(--accent); font-size: 1.2rem;">
-          Grep & Awk Technologies
-        </div>
-      </div>
-      <div style="flex: 1;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
-          <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
-            Cloud Security Intern
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
+              Major Incident Manager
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em; white-space: nowrap;">
+              SEP 2022 — DEC 2024
+            </span>
           </div>
-          <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em; white-space: nowrap;">
-            SEP 2021 — DEC 2021
-          </span>
-        </div>
-        <div id="grepawk-details" class="exp-details">
-          <ul style="list-style: none; padding: 0; margin-top: 0.8rem;">
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Installed and configured <strong style="color: var(--text-hi);">AWS services (EC2, VPC, S3)</strong> using Infrastructure-as-Code principles
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Implemented <strong style="color: var(--text-hi);">IAM policies and security groups</strong> to enforce least privilege access
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Set up monitoring alerts and conducted regular security audits on cloud assets
-            </li>
-            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
-              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
-              Gained hands-on experience in <strong style="color: var(--text-hi);">cost optimization</strong> and selecting appropriate AWS services
-            </li>
-          </ul>
+          <div id="capgemini-details" class="exp-details">
+            <ul style="list-style: none; padding: 0; margin-top: 0.8rem;">
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Managed and coordinated resolution of <strong style="color: var(--text-hi);">50+ P1/P2 incidents</strong> impacting AWS-hosted enterprise applications
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Reduced MTTR from <strong style="color: var(--text-hi);">4 hours to 2.5 hours</strong> through structured bridge calls and simplified communication protocols
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Conducted Post-Incident Reviews (PIRs) and Root Cause Analysis (RCA), documenting findings to prevent recurrence
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Trained <strong style="color: var(--text-hi);">3 L1/L2 support engineers</strong> in ITIL-based incident management
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Maintained transparent stakeholder communication for high-severity incidents to minimize business impact
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-  </div>
-</section>
+      <!-- Grep & Awk Technologies -->
+      <div class="exp-card" onclick="toggleExp('grepawk')">
+        <div style="min-width: 180px; flex-shrink: 0; padding-top: 0.2rem;">
+          <div style="font-weight: 600; color: var(--accent); font-size: 1.2rem;">
+            Grep & Awk Technologies
+          </div>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
+              Cloud Security Intern
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.06em; white-space: nowrap;">
+              SEP 2021 — DEC 2021
+            </span>
+          </div>
+          <div id="grepawk-details" class="exp-details">
+            <ul style="list-style: none; padding: 0; margin-top: 0.8rem;">
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Installed and configured <strong style="color: var(--text-hi);">AWS services (EC2, VPC, S3)</strong> using Infrastructure-as-Code principles
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Implemented <strong style="color: var(--text-hi);">IAM policies and security groups</strong> to enforce least privilege access
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Set up monitoring alerts and conducted regular security audits on cloud assets
+              </li>
+              <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+                <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+                Gained hands-on experience in <strong style="color: var(--text-hi);">cost optimization</strong> and selecting appropriate AWS services
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- EDUCATION -->
-<section id="education" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-  <div style="max-width:1100px; margin:0 auto;">
-    <div class="section-label fade-up">// education</div>
-    <h2 class="fade-up">Academic Background</h2>
-    <div class="timeline fade-up">
+  <section id="education" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto;">
+      <div class="section-label fade-up">// education</div>
+      <h2 class="fade-up">Academic Background</h2>
+      <div class="timeline fade-up">
 
-      <div class="timeline-item">
-        <div class="timeline-date">2025 — 2026</div>
-        <div class="timeline-role">PG Diploma in Cloud Computing</div>
-        <div class="timeline-company">— University of Lincoln, United Kingdom</div>
-        <div class="timeline-desc">
-          Relevant Modules: Cloud Architecture,Cloud Deployment, CI/CD, Security & Compliance, Data Engineering, 
-          DevOps & Automation. Gained hands-on experience with AWS, Azure, and GCP through 
-          practical coursework and projects.
+        <div class="timeline-item">
+          <div class="timeline-date">2025 — 2026</div>
+          <div class="timeline-role">PG Diploma in Cloud Computing</div>
+          <div class="timeline-company">— University of Lincoln, United Kingdom</div>
+          <div class="timeline-desc">
+            Relevant Modules: Cloud Architecture, Cloud Deployment, CI/CD, Security & Compliance, Data Engineering, 
+            DevOps & Automation. Gained hands-on experience with AWS, Azure, and GCP through 
+            practical coursework and projects.
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-date">2017 — 2021</div>
-        <div class="timeline-role">B.E. in Computer Science & Engineering</div>
-        <div class="timeline-company">— East West Institute of Technology, Bengaluru</div>
-        <div class="timeline-desc">
-          CGPA: 7.4 / 10.0. Built a strong foundation in programming, data structures, 
-          algorithms, and software engineering principles.
+        <div class="timeline-item">
+          <div class="timeline-date">2017 — 2021</div>
+          <div class="timeline-role">B.E. in Computer Science & Engineering</div>
+          <div class="timeline-company">— East West Institute of Technology, Bengaluru</div>
+          <div class="timeline-desc">
+            CGPA: 7.4 / 10.0. Built a strong foundation in programming, data structures, 
+            algorithms, and software engineering principles.
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -994,6 +1050,19 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // ── TOGGLE EXPERIENCE DETAILS ──
+    function toggleExp(company) {
+      const details = document.getElementById(company + '-details');
+      
+      if (details) {
+        if (details.classList.contains('open')) {
+          details.classList.remove('open');
+        } else {
+          details.classList.add('open');
+        }
+      }
+    }
   </script>
 
 </body>
