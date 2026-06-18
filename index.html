@@ -814,45 +814,116 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" style="padding:6rem 3rem;">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="section-label fade-up">// experience</div>
-      <h2 class="fade-up">Career Timeline</h2>
-      <div class="timeline fade-up">
+<!-- EXPERIENCE -->
+<section id="experience" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label fade-up">// experience</div>
+    <h2 class="fade-up">Career Timeline</h2>
 
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2022 — Dec 2024</div>
-          <div class="timeline-role">Major Incident Manager</div>
-          <div class="timeline-company">— Capgemini (Client: Toll Group)</div>
-          <div class="timeline-desc">
-            Managed and coordinated resolution of 50+ P1/P2 incidents impacting AWS-hosted 
-            enterprise applications and infrastructure. Reduced Mean Time To Resolution (MTTR) 
-            from 4 hours to 2.5 hours through structured bridge calls and simplified 
-            communication protocols. Conducted Post-Incident Reviews (PIRs) and Root Cause 
-            Analysis (RCA), documenting findings in knowledge bases to prevent recurrence. 
-            Trained 3 L1/L2 support engineers in ITIL-based incident management, improving 
-            first-contact resolution rates. Maintained transparent stakeholder communication 
-            for high-severity incidents to minimize business impact.
-          </div>
+    <!-- Experience Item 1 -->
+    <div class="exp-item fade-up" style="display: flex; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="toggleExp(this)">
+      <div style="min-width: 180px; flex-shrink: 0;">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.08em;">
+          SEP 2022 — DEC 2024
         </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2021 — Dec 2021</div>
-          <div class="timeline-role">Cloud Security Intern</div>
-          <div class="timeline-company">— Grep & Awk Technologies</div>
-          <div class="timeline-desc">
-            Installed and configured AWS cloud services (EC2, VPC, S3) using Infrastructure-as-Code 
-            principles and automation scripts. Implemented IAM policies and security groups to 
-            enforce least privilege access. Set up monitoring alerts and conducted regular security 
-            audits on cloud assets. Gained hands-on experience in cost optimization and selecting 
-            appropriate AWS services based on compute and security requirements.
-          </div>
+        <div style="font-weight: 600; color: var(--text-hi); font-size: 1rem; margin-top: 0.2rem;">
+          Major Incident Manager
         </div>
-
+        <div style="color: var(--text-dim); font-size: 0.85rem;">
+          Capgemini
+        </div>
+        <div style="color: var(--text-dim); font-size: 0.75rem; font-family: var(--font-mono);">
+          (Client: Toll Group)
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
+            Major Incident Manager
+          </div>
+          <span style="color: var(--text-dim); font-size: 0.8rem; transition: transform 0.3s;" class="exp-arrow">▼</span>
+        </div>
+        <div style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.3rem;">
+          Capgemini · Bengaluru, India
+        </div>
+        <div class="exp-details" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0;">
+          <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Managed and coordinated resolution of <strong style="color: var(--text-hi);">50+ P1/P2 incidents</strong> impacting AWS-hosted enterprise applications and infrastructure
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Reduced Mean Time To Resolution (MTTR) from <strong style="color: var(--text-hi);">4 hours to 2.5 hours</strong> through structured bridge calls and simplified communication protocols
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Conducted Post-Incident Reviews (PIRs) and Root Cause Analysis (RCA), documenting findings to prevent recurrence
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Trained <strong style="color: var(--text-hi);">3 L1/L2 support engineers</strong> in ITIL-based incident management, improving first-contact resolution rates
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Maintained transparent stakeholder communication for high-severity incidents to minimize business impact
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- Experience Item 2 -->
+    <div class="exp-item fade-up" style="display: flex; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="toggleExp(this)">
+      <div style="min-width: 180px; flex-shrink: 0;">
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.08em;">
+          SEP 2021 — DEC 2021
+        </div>
+        <div style="font-weight: 600; color: var(--text-hi); font-size: 1rem; margin-top: 0.2rem;">
+          Cloud Security Intern
+        </div>
+        <div style="color: var(--text-dim); font-size: 0.85rem;">
+          Grep & Awk Technologies
+        </div>
+        <div style="color: var(--text-dim); font-size: 0.75rem; font-family: var(--font-mono);">
+          Bengaluru, India
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-weight: 600; color: var(--text-hi); font-size: 1.05rem;">
+            Cloud Security Intern
+          </div>
+          <span style="color: var(--text-dim); font-size: 0.8rem; transition: transform 0.3s;" class="exp-arrow">▼</span>
+        </div>
+        <div style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.3rem;">
+          Grep & Awk Technologies · Bengaluru, India
+        </div>
+        <div class="exp-details" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0;">
+          <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Installed and configured AWS cloud services (<strong style="color: var(--text-hi);">EC2, VPC, S3</strong>) using Infrastructure-as-Code principles
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Implemented <strong style="color: var(--text-hi);">IAM policies and security groups</strong> to enforce least privilege access
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Set up monitoring alerts and conducted regular security audits on cloud assets
+            </li>
+            <li style="padding: 0.3rem 0; color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.2rem;">
+              <span style="position: absolute; left: 0; color: var(--accent);">▹</span>
+              Gained hands-on experience in <strong style="color: var(--text-hi);">cost optimization</strong> and selecting appropriate AWS services
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <!-- EDUCATION -->
 <section id="education" style="padding:6rem 3rem; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
